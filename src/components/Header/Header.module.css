@@ -1,3 +1,99 @@
-.title{
-    font-size: 50px;
+.Header{
+    padding: 20px 10%;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbrand{
+    flex: 6;
+    flex-wrap: nowrap;
+    float: right;
+    text-align: left;
+    text-decoration: none;
+    margin: 10px 0px;
+    font-weight: bolder;
+    font-size: 30px;
+    color: #697cb6;
+}
+
+.navlogo {
+    width: 60px;
+    margin-right: 100px;
+}
+
+.navitems {
+    list-style: none;
+    display: flex;
+}
+
+.navitems > li {
+    padding: 20px;
+}
+
+.navbutton{
+    margin-left: 15em;
+}
+
+.button{
+    padding: 10px;
+    margin: 0 20px;
+}
+
+/* Header */
+
+.Headercontent{
+    padding: 90px 0px;
+    max-width: 100%;
+  }
+
+.Headertitle{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 74px;
+    margin: 0;
+}
+
+.Headersubtitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #828282;
+    padding-top: 10px;
+    }
+
+.Headerbutton{
+    border-radius: 3px;
+    margin: 30px 10px;
+    display: inline-block;
+    font-size: 16px;
+    font-family: inherit;
+    line-height: 1.5;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.Headerimg{
+    width: 100%;
+}
+
+img{
+    position: relative;
+    top: -50px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.col6{
+    width: 50%;
 }
