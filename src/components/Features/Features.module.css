@@ -1,13 +1,45 @@
-section{
-    padding: 0px 10%;
+
+.Featuremain {
+    background-color: #697cb6;
+    padding: 3% 10%;
+    line-height: 1.8;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #ffff;
+    margin-bottom: 10%;
+  }
+
+  .Featurebox{
+    border-radius: 1px solid  #697cb6;
+    padding: 50px 80px;
+  }
+  
+.Featureheading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0;
 }
 
-.Featuressection{
+.Featuretext {
+    line-height: 1.8;
+    /* padding: 0 4%; */
+}
+
+.iconstyle {
+    color: #ffff;
+    font-size: 40px;
+    padding-bottom: 1.0rem;
+}
+
+
+.Featuresection{
+  padding: 0px 10%;
   display: flex;
   margin: 50px 0;
 }
 
-.Featurescontent{
+.Featurecontent{
    flex:6;
    padding-left: 15%;
    text-align: right;
@@ -15,26 +47,26 @@ section{
    top: 60px;
 }
 
-.Featurescontentmiddle{
+.Featurecontentmiddle{
     text-align: left;
     padding-right: 15%;
     position: relative;
     top: 60px;
 }
 
-.Featuresimg{
+.Featureimg{
    flex:6;
-   justify-items: left;
-   text-align: left;
-   margin: 0;
-   padding: 0;
+   position: relative;
+   right: 60px;
+   
 }
 
-.image{
-  text-align: right;
+.Featureimage{
+    position: relative;
+    left: 60px;
 }
 
-.Features{
+.Feature{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -44,7 +76,7 @@ section{
     color: #697cb6;
 }
 
-.Featurestitle{
+.Featuretitle{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -54,7 +86,7 @@ section{
     margin: 0;
 }
 
-.Featuressubtitle{
+.Featuresubtitle{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
