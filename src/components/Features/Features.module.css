@@ -1,0 +1,103 @@
+
+.Featuremain {
+    background-color: #697cb6;
+    padding: 3% 10%;
+    line-height: 1.8;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #ffff;
+    margin-bottom: 10%;
+  }
+
+  .Featurebox{
+    border-radius: 1px solid  #697cb6;
+    padding: 50px 80px;
+  }
+  
+.Featureheading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.Featuretext {
+    line-height: 1.8;
+    /* padding: 0 4%; */
+}
+
+.iconstyle {
+    color: #ffff;
+    font-size: 40px;
+    padding-bottom: 1.0rem;
+}
+
+
+.Featuresection{
+  padding: 0px 10%;
+  display: flex;
+  margin: 50px 0;
+}
+
+.Featurecontent{
+   flex:6;
+   padding-left: 15%;
+   text-align: right;
+   position: relative;
+   top: 60px;
+}
+
+.Featurecontentmiddle{
+    text-align: left;
+    padding-right: 15%;
+    position: relative;
+    top: 60px;
+}
+
+.Featureimg{
+   flex:6;
+   position: relative;
+   right: 60px;
+   
+}
+
+.Featureimage{
+    position: relative;
+    left: 60px;
+}
+
+.Feature{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #697cb6;
+}
+
+.Featuretitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 48px;
+    color: #313131;
+    margin: 0;
+}
+
+.Featuresubtitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #828282;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.image{
+   Width: 600px;
+   Height: 500px;
+}
