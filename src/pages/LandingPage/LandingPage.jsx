@@ -1,4 +1,4 @@
-import { Contact, FAQ, Features, Header, Signup } from "../components";
+import { Contact, FAQ, Features, Header, Signup } from "../../components";
 
 export default function LandingPage() {
   return (

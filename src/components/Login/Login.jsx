@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useFirebaseAuth, login } from "../../../firebase/auth";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./styles";
@@ -10,20 +10,20 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const { isLoading } = useFirebaseAuth();
   const authenticated = useSelector((state) => state.login.authenticated);
-  const history = useHistory();
+  const navigateTo = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await login(email, password);
-      history.push("/dashboard");
+      navigateTo("/dashboard");
     } catch (error) {
       console.log(error);
     }
   };
 
   if (authenticated) {
-    history.push("/dashboard");
+    navigateTo("/dashboard");
   }
 
   return (
