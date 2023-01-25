@@ -1,54 +1,112 @@
-import React, { useState } from "react";
-import { useFirebaseAuth, login } from "../../../firebase/auth";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import styles from "./styles";
+import { useState } from "react";
+import {
+  auth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  sigInWithEmailAndPassword,
+} from "../../../firebase/firebaseConfig";
+import { useDispatch } from "react-redux";
+import { login } from "../../Redux/userSlice";
+import "./Login.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isLoading } = useFirebaseAuth();
-  const authenticated = useSelector((state) => state.login.authenticated);
-  const navigateTo = useNavigate();
+  const [name, setName] = useState("");
+  const [profilePic, setProfilePic] = useState("");
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (e) => {
+  const loginToApp = (e) => {
     e.preventDefault();
-    try {
-      await login(email, password);
-      navigateTo("/dashboard");
-    } catch (error) {
-      console.log(error);
-    }
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            photoUrl: userAuth.user.photoURL,
+          })
+        );
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 
-  if (authenticated) {
-    navigateTo("/dashboard");
-  }
+  const register = () => {
+    if (!name) {
+      return alert('Please enter a full name');
+    }
+
+    console.log('register the user');
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        updateProfile(userAuth.user, {
+          displayName: name,
+          photoURL: profilePic,
+        })
+          .then(
+            dispatch(
+              login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: name,
+                photoUrl: profilePic,
+              })
+            )
+          )
+          .catch((error) => {
+            console.log('user not updated');
+          });
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
 
   return (
-    <div style={styles.container}>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label>
-          Password
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? "Loading..." : "Sign In"}
+    <div className="login">
+      <img src="Linkedin_Logo_text.svg" alt="" />
+      <form>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Full name (required if registering)"
+          type="text"
+        />
+
+        <input
+          value={profilePic}
+          onChange={(e) => setProfilePic(e.target.value)}
+          placeholder="Profile picture URL (optional)"
+          type="text"
+        />
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          type="email"
+        />
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          type="password"
+        />
+        <button type="submit" onClick={loginToApp}>
+          Sign In
         </button>
       </form>
-      <div style={styles.linkContainer}>
-        <Link to="/register" style={styles.link}>
-          Don&apos;t have an account? Sign Up
-        </Link>
-        <Link to="/forgot-password" style={styles.link}>
-          Forgot Password?
-        </Link>
-      </div>
+
+      <p>
+        Not a member?{" "}
+        <span className="login__register" onClick={register}>
+          Register Now
+        </span>
+      </p>
     </div>
   );
 }
