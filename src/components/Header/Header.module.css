@@ -1,0 +1,57 @@
+.Main{
+    padding: 6% 10% 3%;
+    position: sticky;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Headercontent{
+    width: 50%;
+    
+}
+
+.Headertitle{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 74px;
+    margin: 0;
+    color: #697cb6;
+}
+
+.Headersubtitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #828282;
+    margin: 10px;
+    padding: 0;
+    }
+
+.Headerbutton{
+    border-radius: 3px;
+    margin: 30px 10px;
+    display: inline-block;
+    font-size: 16px;
+    font-family: inherit;
+    line-height: 1.5;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #697cb6;
+    border: 1px solid #697cb6;
+    color: #ffff;
+}
+
+.Headerimg{
+    width: 100%;
+    position: relative;
+    left: 60px;
+}
+
+
