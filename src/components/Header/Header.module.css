@@ -1,75 +1,40 @@
-.Header{
-    padding: 20px 10%;
+.Main {
+    padding: 6% 10% 3%;
+    position: sticky;
 }
 
-.nav {
+.Header {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-evenly;
 }
 
-.navbrand{
-    flex: 6;
-    flex-wrap: nowrap;
-    float: right;
-    text-align: left;
-    text-decoration: none;
-    margin: 10px 0px;
-    font-weight: bolder;
-    font-size: 30px;
-    color: #697cb6;
+.Headercontent {
+    width: 50%;
+
 }
 
-.navlogo {
-    width: 60px;
-    margin-right: 100px;
-}
-
-.navitems {
-    list-style: none;
-    display: flex;
-}
-
-.navitems > li {
-    padding: 20px;
-}
-
-.navbutton{
-    margin-left: 15em;
-}
-
-.button{
-    padding: 10px;
-    margin: 0 20px;
-}
-
-/* Header */
-
-.Headercontent{
-    padding: 90px 0px 20px;
-    max-width: 100%;
-  }
-
-.Headertitle{
+.Headertitle {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 700;
-    font-size: 64px;
+    font-size: 50px;
     line-height: 74px;
     margin: 0;
+    color: #697cb6;
 }
 
-.Headersubtitle{
+.Headersubtitle {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 32px;
     color: #828282;
-    padding-top: 10px;
-    }
+    margin: 10px;
+    padding: 0;
+}
 
-.Headerbutton{
+.Headerbutton {
     border-radius: 3px;
     margin: 30px 10px;
     display: inline-block;
@@ -78,22 +43,13 @@
     line-height: 1.5;
     padding: 10px 20px;
     text-decoration: none;
+    background-color: #697cb6;
+    border: 1px solid #697cb6;
+    color: #ffff;
 }
 
-.Headerimg{
+.Headerimg {
     width: 100%;
-}
-
-img{
     position: relative;
-    top: -50px;
-}
-
-.row{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.col6{
-    width: 50%;
+    left: 60px;
 }

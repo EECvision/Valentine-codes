@@ -2,8 +2,8 @@ import { useState } from "react";
 import {
   auth,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   updateProfile,
-  sigInWithEmailAndPassword,
 } from "../../../firebase/firebaseConfig";
 import { useDispatch } from "react-redux";
 import { login } from "../../Redux/userSlice";
@@ -18,7 +18,6 @@ export default function Login() {
 
   const loginToApp = (e) => {
     e.preventDefault();
-
     signInWithEmailAndPassword(auth, email, password)
       .then((userAuth) => {
         dispatch(
@@ -37,10 +36,10 @@ export default function Login() {
 
   const register = () => {
     if (!name) {
-      return alert('Please enter a full name');
+      return alert("Please enter a full name");
     }
 
-    console.log('register the user');
+    console.log("register the user");
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userAuth) => {
@@ -59,7 +58,7 @@ export default function Login() {
             )
           )
           .catch((error) => {
-            console.log('user not updated');
+            console.log("user not updated", error.message);
           });
       })
       .catch((err) => {
