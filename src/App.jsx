@@ -1,9 +1,9 @@
 import classes from "./App.module.css";
 import { Routes, Route } from "react-router-dom";
-import UserDashboard from "./pages/UserDashboard/UserDashboard";
+import UserDashboard from "./Pages/UserDashboard/UserDashboard";
 import Login from "./components/Login/Login";
-import Signup from "./pages/Signup/Signup";
-import LandingPage from "./pages/LandingPage/LandingPage.jsx";
+import Signup from "./Pages/Signup/Signup";
+import LandingPage from "./Pages/LandingPage/LandingPage.jsx";
 
 function App() {
   return (
