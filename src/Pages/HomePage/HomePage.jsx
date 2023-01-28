@@ -1,6 +1,6 @@
 import { Contact, FAQ, Features, Header, Signup } from "../../components";
 
-export default function HomePage() {
+function HomePage() {
   return (
     <>
       <Header />
@@ -11,3 +11,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export default HomePage;
