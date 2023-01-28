@@ -1,11 +1,11 @@
-import classes from "./Dashboard.module.css";
+import classes from "./UserDashboard.module.css";
 
-function Dashboard() {
+function UserDashboard() {
   return (
-    <div className={classes.Dashboard}>
-      <h1 className={classes.title}>My dashboard</h1>
+    <div className={classes.UserDashboard}>
+      <h1 className={classes.title}>My UserDashboard</h1>
     </div>
   );
 }
 
-export default Dashboard;
+export default UserDashboard;

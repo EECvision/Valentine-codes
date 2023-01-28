@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../Redux/userSlice";
 import "./Login.css";
 
-export default function Login() {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -109,3 +109,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;
