@@ -1,9 +1,13 @@
-body {
+*{
+  box-sizing: border-box;
+}
+
+.main {
     background-color: #e3e6f7;
     font-family: "Oleo Script", cursive;
   }
   
-  .main {
+  .signinsection {
     background-color: #ffffff;
     padding: 30px 3%;
     width: 600px;

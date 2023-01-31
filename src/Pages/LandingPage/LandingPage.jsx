@@ -1,13 +1,11 @@
-import { Contact, FAQ, Features, Header, Signup } from "../../components";
+import { Navbar, Header, Footer } from "../../components";
 
 function LandingPage() {
   return (
     <>
+      <Navbar />
       <Header />
-      <Features />
-      <Signup />
-      <FAQ />
-      <Contact />
+      <Footer />
     </>
   );
 }
