@@ -1,5 +1,12 @@
-import { useState } from "react";
 import classes from "./Signin.module.css";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth } from "../../firebase/firebaseConfig";
+import { toast } from "react-toastify";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
 
 const errorMessages = {
   email: "Email address is required",
@@ -10,6 +17,8 @@ function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -32,7 +41,44 @@ function Signin() {
     console.log({ email, password });
   };
 
+  const navigate = useNavigate();
+
+  const loginUser = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        setIsLoading(false);
+        toast.success("Login Successful...");
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        toast.error(error.message);
+      });
+  };
+
+  const provider = new GoogleAuthProvider();
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then(() => {
+        toast.success("Login Successfully");
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
+    <>
+      {isLoading && (
+        <Box sx={{ display: "flex" }}>
+          <CircularProgress />
+        </Box>
+      )}
+
     <div className={classes.main}>
       <div className={classes.signinsection}>
         <p className={classes.signintext}>Login</p>
@@ -71,30 +117,33 @@ function Signin() {
           </form>
         </div>
 
-        <a href="#" className={classes.forgotpassword}>
+        <Link to="/forgotpassword" className={classes.forgotpassword}>
           Forgot Password?
-        </a>
+        </Link>
 
         <div className={classes.signinextras}>
           <div>
-            <a href="#" className={classes.signingoogle}>
+            <a className={classes.signingoogle}>
               <img
                 src="https://img.icons8.com/color/48/null/google-logo.png"
                 className={classes.googleicon}
               />
-              <span className={classes.sign}>Sign in with Google</span>
+              <span className={classes.sign} onClick={signInWithGoogle}>
+                Sign in with Google
+              </span>
             </a>
 
             <h6 className={classes.createaccount}>
               New User?{" "}
-              <a href="#" className={classes.accountlink}>
-                Create an account
-              </a>
+              <Link to="/register" className={classes.accountlink}>
+                Sign Up
+              </Link>
             </h6>
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

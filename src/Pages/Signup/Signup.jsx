@@ -1,4 +1,10 @@
 import { useState } from "react";
+import { auth } from "../../firebase/firebaseConfig";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import classes from "./Signup.module.css";
 
 const errorMessages = {
@@ -12,6 +18,9 @@ function Signup() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleFirstnameChange = (event) => {
     const value = event.target.value;
@@ -36,16 +45,46 @@ function Signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (email === "") {
-      setErrorMessage(errorMessages.email);
+      toast.error(errorMessages.email);
     }
     if (password === "") {
-      setErrorMessage(errorMessages.password);
+      toast.error(errorMessages.password);
     }
-    console.log({ email, password, firstname, lastname });
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        setIsLoading(false);
+        toast.success("Registration Successful...");
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        toast.error(error.message);
+      });
+  };
+
+  const provider = new GoogleAuthProvider();
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then(() => {
+        // const user = result.user;
+        toast.success("Login Successfully");
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
 
   return (
-    <div className={classes.main}>
+    <>
+      {isLoading && (
+        <Box sx={{ display: "flex" }}>
+          <CircularProgress />
+        </Box>
+      )}
+
+      <div className={classes.main}>
       <div className={classes.signupsection}>
         <p className={classes.signuptext}> Create an account </p>
 
@@ -105,23 +144,37 @@ function Signup() {
 
             {errorMessage ? <div className={classes.errorMessage}>{errorMessage}</div> : null}
 
-            <input className={classes.submit} type="submit" value="SUBMIT" onClick={handleSubmit} />
+              <input
+                className={classes.submit} type="submit"
+                value="SUBMIT"
+                onClick={handleSubmit}
+              />
           </form>
         </div>
 
         <div className={classes.signupextras}>
-          <div>
-            <a href="#" className={classes.signupgoogle}>
-              <img
-                src="https://img.icons8.com/color/48/null/google-logo.png"
-                className={classes.googleicon}
-              />
-              <span className={classes.sign}>Sign up with Google</span>
-            </a>
+            <div>
+              <a href="#" className={classes.signupgoogle}>
+                <img
+                  src="https://img.icons8.com/color/48/null/google-logo.png"
+                  className={classes.googleicon}
+                />
+                <span className={classes.sign} onClick={signInWithGoogle}>
+                  Sign up with Google
+                </span>
+              </a>
+            </div>
+
+            <h6 className={classes.createaccount}>
+              New User?{" "}
+              <Link to="/login" className={classes.accountlink}>
+                Login
+              </Link>
+            </h6>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
