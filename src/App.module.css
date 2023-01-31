@@ -1,8 +1,10 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .App {
-    margin: 0 auto;
-    background-color: #e5eff8;
+    max-height: 100vh;
+    font-family: "Oleo Script", cursive;;
 }

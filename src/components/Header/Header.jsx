@@ -3,23 +3,23 @@ import classes from "./Header.module.css";
 
 function Header() {
   return (
-    <div className={classes.Main}>
-      <div className={classes.Header}>
-        <div className={classes.Headercontent}>
-          <h1 className={classes.Headertitle}>
+    <div className={classes.mainheader}>
+      <div className={classes.header}>
+        <div className={classes.headercontent}>
+          <h1 className={classes.headertitle}>
             Gaining control of your finances has never been easier
           </h1>
-          <h4 className={classes.Headersubtitle}>
-            Introducing the Moneywise budgeting app for managing your finances! With our app, you
+          <h4 className={classes.headersubtitle}>
+            Introducing the Smartplan budgeting app for managing your finances! With our app, you
             can easily track your expenses, set financial goals, and create a personalized budget.
           </h4>
-          <button type="button" className={classes.Headerbutton}>
+          <button type="button" className={classes.headerbutton}>
             Get Started
           </button>
         </div>
 
-        <div className={classes.Headercontent}>
-          <img className={classes.Headerimg} src="/src/assets/img01.png" alt="" />
+        <div className={classes.headercontent}>
+          <img className={classes.headerimg} src="/src/assets/img01.png" alt="budget-img" />
         </div>
       </div>
     </div>

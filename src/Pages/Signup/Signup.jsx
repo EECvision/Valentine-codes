@@ -45,8 +45,8 @@ function Signup() {
   };
 
   return (
-    <div className={classes.container}>
-      <div className={classes.main}>
+    <div className={classes.main}>
+      <div className={classes.signupsection}>
         <p className={classes.signuptext}> Create an account </p>
 
         <div className={classes.signupform}>

@@ -1,19 +1,25 @@
-.Main {
-    padding: 6% 10% 3%;
-    position: sticky;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.mainheader {
+    padding: 4% 10% 2%;
+    background-color: #ffff;
+    width: 100%;
 }
 
-.Header {
+.header {
     display: flex;
     justify-content: space-evenly;
 }
 
-.Headercontent {
+.headercontent {
     width: 50%;
-
 }
 
-.Headertitle {
+.headertitle {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 700;
@@ -23,7 +29,7 @@
     color: #697cb6;
 }
 
-.Headersubtitle {
+.headersubtitle {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -34,7 +40,7 @@
     padding: 0;
 }
 
-.Headerbutton {
+.headerbutton {
     border-radius: 3px;
     margin: 30px 10px;
     display: inline-block;
@@ -48,8 +54,140 @@
     color: #ffff;
 }
 
-.Headerimg {
+.headerimg {
     width: 100%;
     position: relative;
     left: 60px;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+
+    .mainheader {
+        padding: 50px;
+    }
+
+    .header {
+        display: block;
+    }
+    
+    .headercontent {
+        width: 100%;
+    }
+    
+    .headertitle {
+        font-size: 50px;
+        line-height: 1.2;
+        margin: 0;
+    }
+    
+    .headersubtitle {
+        color: #000;
+        font-size: 25px;
+        line-height: 1.4;
+        padding: 0;
+        opacity: 0.6;
+        margin: 20px 0px;
+    }
+    
+    .headerbutton {
+        font-size: 20px;
+        line-height: 1.5;
+        padding: 10px 20px;
+        margin: 15px 0px 20px;
+    }
+    
+    .headerimg {
+        width: 100%;
+        position: relative;
+        left: 5px;
+    }
+    
+}
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+
+    .mainheader {
+        padding: 30px;
+    }
+
+    .header {
+        display: block;
+    }
+    
+    .headercontent {
+        width: 100%;
+    }
+    
+    .headertitle {
+        font-size: 30px;
+        line-height: 1.2;
+        margin: 0;
+    }
+    
+    .headersubtitle {
+        color: #000;
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 0;
+        opacity: 0.6;
+        margin: 10px 0px;
+    }
+    
+    .headerbutton {
+        font-size: 10px;
+        line-height: 1.5;
+        padding: 8px 10px;
+        margin: 15px 0px 30px;
+    }
+    
+    .headerimg {
+        width: 100%;
+        position: relative;
+        left: 5px;
+    }
+    
+}
+
+@media screen and (min-width: 150px) and (max-width: 300px) {
+
+    .main {
+        padding: 30px 20px;
+    }
+
+    .header {
+        display: block;
+    }
+    
+    .headercontent {
+        width: 100%;
+    }
+    
+    .headertitle {
+        font-size: 20px;
+        line-height: 1.2;
+        margin: 0;
+    }
+    
+    .headersubtitle {
+        color: #000;
+        font-size: 12px;
+        line-height: 1.4;
+        padding: 0;
+        opacity: 0.6;
+        margin: 10px 0px;
+    }
+    
+    .headerbutton {
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 5px 8px;
+        margin: 15px 0px 30px;
+    }
+    
+    .headerimg {
+        width: 100%;
+        position: relative;
+        left: 5px;
+    }
+    
 }
