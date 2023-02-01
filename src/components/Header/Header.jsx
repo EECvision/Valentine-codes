@@ -1,5 +1,5 @@
-// import { Button } from '@mui/material';
 import classes from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -13,9 +13,13 @@ function Header() {
             Introducing the Smartplan budgeting app for managing your finances! With our app, you
             can easily track your expenses, set financial goals, and create a personalized budget.
           </h4>
-          <button type="button" className={classes.headerbutton}>
-            Get Started
-          </button>
+
+          <Link to="/register">
+            <button type="button" className={classes.Headerbutton}>
+              Get Started
+            </button>
+          </Link>
+          
         </div>
 
         <div className={classes.headercontent}>
