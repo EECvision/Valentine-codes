@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
 
 function Header() {
@@ -6,12 +7,17 @@ function Header() {
       <img className={classes.navbrand} src="/src/assets/smartplan-logo-1.png" alt="budget-img" />
 
       <div className={classes.navbutton}>
+        <Link to="/register">
         <button type="button" className={classes.button}>
           Get Started
-        </button>
+          </button>
+        </Link>
+
+        <Link to="/login">
         <button type="button" className={classes.button}>
           Login
-        </button>
+          </button>
+        </Link>
       </div>
     </div>
   );
