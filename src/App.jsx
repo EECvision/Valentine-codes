@@ -6,6 +6,7 @@ import UserDashboard from "./Pages/UserDashboard/UserDashboard";
 import Login from "./Pages/Signin/Signin";
 import Signup from "./Pages/Signup/Signup";
 import LandingPage from "./Pages/LandingPage/LandingPage.jsx";
+import Create from "./Pages/Create/Create";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<UserDashboard />} />
+        <Route path="/create/:type" element={<Create />} />
         <Route path="/register" element={<Signup />} />
       </Routes>
       <ToastContainer />

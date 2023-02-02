@@ -8,14 +8,14 @@ function Header() {
 
       <div className={classes.navbutton}>
         <Link to="/register">
-        <button type="button" className={classes.button}>
-          Get Started
+          <button type="button" className={classes.button}>
+            Get Started
           </button>
         </Link>
 
         <Link to="/login">
-        <button type="button" className={classes.button}>
-          Login
+          <button type="button" className={classes.button}>
+            Login
           </button>
         </Link>
       </div>

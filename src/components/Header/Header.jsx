@@ -19,7 +19,6 @@ function Header() {
               Get Started
             </button>
           </Link>
-          
         </div>
 
         <div className={classes.headercontent}>
