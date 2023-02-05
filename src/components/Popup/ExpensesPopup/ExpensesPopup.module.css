@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   z-index: 20;
-  background: rgba(50, 50, 86, 0.6);
+  background: rgb(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@
 
 .wrapper {
   width: 100%;
-  max-width: 28em;
+  max-width: 48em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,4 +39,55 @@
   to {
     transform: scale(1);
   }
+}
+
+.closeIcon {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.heading {
+  width: 100%;
+  font-size: 1.4rem;
+  text-align: center;
+  /* border: 1px solid red; */
+}
+
+.inputContainer {
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1em;
+}
+
+.inputContainer input {
+  width: 100%;
+  /* padding: 1em; */
+}
+
+.date {
+  white-space: nowrap;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4em;
+}
+
+.buttonContainer {
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newCategory {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
 }
